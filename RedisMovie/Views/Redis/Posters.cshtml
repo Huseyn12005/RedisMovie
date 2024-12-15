@@ -1,0 +1,20 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Movie Posters";
+}
+
+<h2>Movie Posters</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No posters available yet. Add some movies!</p>
+}
+else
+{
+    <div>
+        @foreach (var poster in Model)
+        {
+            <img src="@poster" alt="Movie Poster" style="width:200px; margin:10px;" />
+        }
+    </div>
+}
